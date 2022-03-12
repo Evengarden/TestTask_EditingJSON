@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://editing-json.test'
+paths:
+  '/api/v1/document/{document}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: b2576947-7dfb-4b6c-a321-6646bb2b01d7
+                  status: published
+                  payload: "{\n            \"meta\": {\n                \"type\": \"cunning\",\n                \"color\": null\n            },\n            \"actions\": [\n                {\n                    \"action\": \"eat\",\n                    \"actor\": \"blob\"\n                },\n                {\n                    \"action\": \"run away\"\n                }\n            ]\n}"
+                  created_at: '2022-03-12T11:27:39.000000Z'
+                  updated_at: '2022-03-12T12:48:32.000000Z'
+                properties:
+                  id:
+                    type: string
+                    example: b2576947-7dfb-4b6c-a321-6646bb2b01d7
+                  status:
+                    type: string
+                    example: published
+                  payload:
+                    type: string
+                    example: "{\n            \"meta\": {\n                \"type\": \"cunning\",\n                \"color\": null\n            },\n            \"actions\": [\n                {\n                    \"action\": \"eat\",\n                    \"actor\": \"blob\"\n                },\n                {\n                    \"action\": \"run away\"\n                }\n            ]\n}"
+                  created_at:
+                    type: string
+                    example: '2022-03-12T11:27:39.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2022-03-12T12:48:32.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    patch:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: document
+        description: ''
+        example: b2576947-7dfb-4b6c-a321-6646bb2b01d7
+        required: true
+        schema:
+          type: integer
+  /api/v1/document:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/document/{document}/publish':
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: document
+        description: ''
+        example: b2576947-7dfb-4b6c-a321-6646bb2b01d7
+        required: true
+        schema:
+          type: integer
+  /api/v1/documents:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

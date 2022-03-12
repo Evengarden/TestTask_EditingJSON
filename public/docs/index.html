@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://editing-json.test";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.24.1.js"></script>
+
+    <script src="../docs/js/theme-default-3.24.1.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-document--document-">
+                        <a href="#endpoints-GETapi-v1-document--document-">GET api/v1/document/{document}</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-document">
+                        <a href="#endpoints-POSTapi-v1-document">POST api/v1/document</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-v1-document--document-">
+                        <a href="#endpoints-PATCHapi-v1-document--document-">PATCH api/v1/document/{document}</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-document--document--publish">
+                        <a href="#endpoints-POSTapi-v1-document--document--publish">POST api/v1/document/{document}/publish</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-documents">
+                        <a href="#endpoints-POSTapi-v1-documents">POST api/v1/documents</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: March 12 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://editing-json.test</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-v1-document--document-">GET api/v1/document/{document}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-document--document-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-document--document-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;id&quot;: &quot;b2576947-7dfb-4b6c-a321-6646bb2b01d7&quot;,
+    &quot;status&quot;: &quot;published&quot;,
+    &quot;payload&quot;: &quot;{\n            \&quot;meta\&quot;: {\n                \&quot;type\&quot;: \&quot;cunning\&quot;,\n                \&quot;color\&quot;: null\n            },\n            \&quot;actions\&quot;: [\n                {\n                    \&quot;action\&quot;: \&quot;eat\&quot;,\n                    \&quot;actor\&quot;: \&quot;blob\&quot;\n                },\n                {\n                    \&quot;action\&quot;: \&quot;run away\&quot;\n                }\n            ]\n}&quot;,
+    &quot;created_at&quot;: &quot;2022-03-12T11:27:39.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2022-03-12T12:48:32.000000Z&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-document--document-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-document--document-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-document--document-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-document--document-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-document--document-"></code></pre>
+</span>
+<form id="form-GETapi-v1-document--document-" data-method="GET"
+      data-path="api/v1/document/{document}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-document--document-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-document--document-"
+                    onclick="tryItOut('GETapi-v1-document--document-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-document--document-"
+                    onclick="cancelTryOut('GETapi-v1-document--document-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-document--document-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/document/{document}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>document</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="document"
+               data-endpoint="GETapi-v1-document--document-"
+               value="b2576947-7dfb-4b6c-a321-6646bb2b01d7"
+               data-component="url" hidden>
+    <br>
+
+            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-v1-document">POST api/v1/document</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-document">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://editing-json.test/api/v1/document" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://editing-json.test/api/v1/document"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-document">
+</span>
+<span id="execution-results-POSTapi-v1-document" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-document"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-document"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-document" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-document"></code></pre>
+</span>
+<form id="form-POSTapi-v1-document" data-method="POST"
+      data-path="api/v1/document"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-document', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-document"
+                    onclick="tryItOut('POSTapi-v1-document');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-document"
+                    onclick="cancelTryOut('POSTapi-v1-document');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-document" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/document</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-PATCHapi-v1-document--document-">PATCH api/v1/document/{document}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-v1-document--document-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-v1-document--document-">
+</span>
+<span id="execution-results-PATCHapi-v1-document--document-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-v1-document--document-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-v1-document--document-"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-v1-document--document-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-v1-document--document-"></code></pre>
+</span>
+<form id="form-PATCHapi-v1-document--document-" data-method="PATCH"
+      data-path="api/v1/document/{document}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-v1-document--document-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-v1-document--document-"
+                    onclick="tryItOut('PATCHapi-v1-document--document-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-v1-document--document-"
+                    onclick="cancelTryOut('PATCHapi-v1-document--document-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-v1-document--document-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/document/{document}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>document</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="document"
+               data-endpoint="PATCHapi-v1-document--document-"
+               value="b2576947-7dfb-4b6c-a321-6646bb2b01d7"
+               data-component="url" hidden>
+    <br>
+
+            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-v1-document--document--publish">POST api/v1/document/{document}/publish</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-document--document--publish">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7/publish" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://editing-json.test/api/v1/document/b2576947-7dfb-4b6c-a321-6646bb2b01d7/publish"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-document--document--publish">
+</span>
+<span id="execution-results-POSTapi-v1-document--document--publish" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-document--document--publish"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-document--document--publish"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-document--document--publish" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-document--document--publish"></code></pre>
+</span>
+<form id="form-POSTapi-v1-document--document--publish" data-method="POST"
+      data-path="api/v1/document/{document}/publish"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-document--document--publish', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-document--document--publish"
+                    onclick="tryItOut('POSTapi-v1-document--document--publish');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-document--document--publish"
+                    onclick="cancelTryOut('POSTapi-v1-document--document--publish');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-document--document--publish" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/document/{document}/publish</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>document</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="document"
+               data-endpoint="POSTapi-v1-document--document--publish"
+               value="b2576947-7dfb-4b6c-a321-6646bb2b01d7"
+               data-component="url" hidden>
+    <br>
+
+            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-v1-documents">POST api/v1/documents</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-documents">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://editing-json.test/api/v1/documents" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://editing-json.test/api/v1/documents"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-documents">
+</span>
+<span id="execution-results-POSTapi-v1-documents" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-documents"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-documents"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-documents" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-documents"></code></pre>
+</span>
+<form id="form-POSTapi-v1-documents" data-method="POST"
+      data-path="api/v1/documents"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-documents', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-documents"
+                    onclick="tryItOut('POSTapi-v1-documents');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-documents"
+                    onclick="cancelTryOut('POSTapi-v1-documents');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-documents" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/documents</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
